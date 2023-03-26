@@ -12,7 +12,7 @@ importers:
       prettier: 2.8.7
       turbo: 1.8.5
 
-  apps/docs:
+  apps/remote:
     specifiers:
       '@babel/core': ^7.0.0
       '@types/node': ^17.0.12
@@ -41,7 +41,7 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
 
-  apps/web:
+  apps/host:
     specifiers:
       '@babel/core': ^7.0.0
       '@types/node': ^17.0.12

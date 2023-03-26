@@ -1,9 +1,9 @@
 import { Button } from "ui";
 
-export default function Docs() {
+export default function RemoteApplication() {
   return (
     <div>
-      <h1>Docs</h1>
+      <h1>Remote Application</h1>
       <Button />
     </div>
   );
