@@ -1,9 +1,6 @@
-import React from 'react';
-import Head from 'next/head';
+import Head from "next/head";
 
-interface IProps {}
-
-const RemotePage = (props: IProps) => (
+const RemotePage = () => (
   <div>
     <Head>
       <title>Remote Page</title>
