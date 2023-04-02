@@ -6,12 +6,11 @@ module.exports = {
   webpack(config) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: "remote",
+        name: "remote_next",
         filename: "static/chunks/remoteEntry.js",
         exposes: {
           "./page": "./pages/remote.tsx",
-          "./component1": "./components/Component1.tsx",
-          "./component2": "./components/Component2.tsx",
+          "./component": "./components/Component.tsx",
         },
         remotes: {},
         shared: {},

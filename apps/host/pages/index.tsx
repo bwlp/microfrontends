@@ -1,16 +1,11 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import { Button } from "ui";
 
-const RemotePage = dynamic(() => import("remote1/page"), {
+const RemotePage = dynamic(() => import("remote_next/page"), {
   suspense: true,
   ssr: false,
 });
-const RemoteComponent1 = dynamic(() => import("remote1/component1"), {
-  suspense: true,
-  ssr: false,
-});
-const RemoteComponent2 = dynamic(() => import("remote1/component2"), {
+const RemoteComponent = dynamic(() => import("remote_next/component"), {
   suspense: true,
   ssr: false,
 });
@@ -18,14 +13,12 @@ const RemoteComponent2 = dynamic(() => import("remote1/component2"), {
 export default function HostApplication() {
   return (
     <div>
-      <h1>Host Application</h1>
-      <Button />
+      <h1>Host Application - NextJS</h1>
       <Suspense>
         <RemotePage />
       </Suspense>
       <Suspense>
-        <RemoteComponent1 />
-        <RemoteComponent2 />
+        <RemoteComponent />
       </Suspense>
     </div>
   );

@@ -1,3 +1,2 @@
-declare module 'remote1/page';
-declare module 'remote1/component1';
-declare module 'remote1/component2';
+declare module "remote_next/page";
+declare module "remote_next/component";
