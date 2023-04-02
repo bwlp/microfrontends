@@ -4,8 +4,8 @@ This is an official pnpm starter turborepo.
 
 ## Apps and Packages
 
-- `host`: a Next.js host application
-- `remote`: a Next.js remote application
+- `host-next`: a Next.js host application
+- `remote-next`: a Next.js remote application
 - `host-vite-react`: a Vite with React host application
 - `remote-vite-react`: a Vite with React remote application
 
