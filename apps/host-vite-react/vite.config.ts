@@ -2,6 +2,9 @@ import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
+const remoteViteReactUrl =
+  process.env.REMOTE_VITE_REACT_URL || `http://localhost:3021`;
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -11,7 +14,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       // Modules to expose
       remotes: {
-        remote_vite_react: "http://localhost:3021/assets/remoteEntry.js",
+        remote_vite_react: `${remoteViteReactUrl}/assets/remoteEntry.js`,
       },
       shared: [],
     }),
