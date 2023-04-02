@@ -1,3 +1,5 @@
-export default function RemoteComponent() {
-  return <p>Remote Component</p>;
+import { RemoteComponent } from "ui";
+
+export default function RemoteNextComponent() {
+  return <RemoteComponent remoteType="NextJS" />;
 }

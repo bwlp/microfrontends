@@ -1,10 +1,14 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import { HostPage } from "ui";
 
-const RemoteNextPage = dynamic(() => import("remote_next/page"), {
-  suspense: true,
-  ssr: false,
-});
+const RemoteNextPage = dynamic<{ withHostApp: boolean }>(
+  () => import("remote_next/page"),
+  {
+    suspense: true,
+    ssr: false,
+  }
+);
 const RemoteNextComponent = dynamic(() => import("remote_next/component"), {
   suspense: true,
   ssr: false,
@@ -12,14 +16,17 @@ const RemoteNextComponent = dynamic(() => import("remote_next/component"), {
 
 export default function HostApplication() {
   return (
-    <div>
-      <h1>Host Application - NextJS</h1>
+    <HostPage
+      hostType="NextJS"
+      remoteComponents={
+        <Suspense>
+          <RemoteNextComponent />
+        </Suspense>
+      }
+    >
       <Suspense>
-        <RemoteNextPage />
+        <RemoteNextPage withHostApp />
       </Suspense>
-      <Suspense>
-        <RemoteNextComponent />
-      </Suspense>
-    </div>
+    </HostPage>
   );
 }

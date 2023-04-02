@@ -1,10 +1,9 @@
-import { Button } from "ui";
+import { RemotePage } from "ui";
 
-export default function RemoteApplication() {
-  return (
-    <div>
-      <h1>Remote Application</h1>
-      <Button />
-    </div>
-  );
+interface IProps {
+  withHostApp?: boolean;
+}
+
+export default function RemoteApplication({ withHostApp = false }: IProps) {
+  return <RemotePage remoteType="NextJS" withHostApp={withHostApp} />;
 }

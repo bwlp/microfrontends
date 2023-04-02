@@ -1,3 +1,5 @@
+import { RemoteComponent } from "ui";
+
 export default function Button() {
-  return <button>Click</button>;
+  return <RemoteComponent remoteType="Vite React" />;
 }

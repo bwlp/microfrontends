@@ -1,4 +1,6 @@
 import { lazy, Suspense } from "react";
+import { HostPage } from "ui";
+import "./index.css";
 
 const RemoteViteReactPage = lazy(() => import("remote_vite_react/page"));
 const RemoteViteReactComponent = lazy(
@@ -7,15 +9,18 @@ const RemoteViteReactComponent = lazy(
 
 function App() {
   return (
-    <div className="App">
-      <h1>Host Application - Vite React</h1>
+    <HostPage
+      hostType="Vite React"
+      remoteComponents={
+        <Suspense>
+          <RemoteViteReactComponent />
+        </Suspense>
+      }
+    >
       <Suspense>
-        <RemoteViteReactPage />
+        <RemoteViteReactPage withHostApp />
       </Suspense>
-      <Suspense>
-        <RemoteViteReactComponent />
-      </Suspense>
-    </div>
+    </HostPage>
   );
 }
 

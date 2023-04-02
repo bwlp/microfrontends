@@ -9,7 +9,7 @@ module.exports = {
         name: "remote_next",
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./page": "./pages/remote.tsx",
+          "./page": "./pages/index.tsx",
           "./component": "./components/Component.tsx",
         },
         remotes: {},
